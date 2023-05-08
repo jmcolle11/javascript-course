@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS Review</title>
+
+    <style>
+      .red-btn {
+        background-color: red;
+        color: white;
+        border: none;
+      }
+      
+      .yellow-btn {
+        background-color: yellow;
+        border: none;
+      } 
+
+      .add-to-cart-btn {
+        background-color: yellow;
+      }
+
+      .buy-btn {
+        background-color: orange;
+      }
+    </style>
+
+  </head>
+  <body>
+    <button title="tooltip" class="red-btn" onclick="
+      alert('hello');" >Hello</button>
+    <p>paragraph of <button class="yellow-btn">Hello</button> text</p>
+
+    <button class="add-to-cart-btn" 
+    onclick="alert('added!');">Add to cart</button>
+    <button class="buy-btn"
+    onclick="
+    console.log('loading...');
+    alert('Purchased!');">Buy now</button>
+    
+
+
+
+
+    <script>
+      console.log('Welcome');
+    </script>
+  </body>
+</html>
