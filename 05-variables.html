@@ -20,14 +20,38 @@
       console.log(variable1);
       console.log(variable1+2);
 
-      let result = variable1 + 2;
+      const result = variable1 + 2;
       console.log(result);
 
       console.log(variable1 + result);
 
-      let message = 'Hi';
+      let name = 'John Michael';
+      console.log(`My name is: ${name}`);
+      
+      const tax = 0.1;
+      const cost = (500 + (300 * 2) + 100)/100;
+      const estimatedTax = cost * tax;
+      const totalCost = cost + estimatedTax;
+      console.log(`Cost of food: $${cost}`)
+      console.log(`Estimated tax(10%): $${estimatedTax}`)
+      console.log(`Total cost: $${totalCost}`);
+
+      //use const by default but if you want the value changeable use let instead
+      const message = 'Hi';
       console.log(message);
       console.log(message + result);
+
+      //var is the original way to create variable however there are some issues and it's old way
+      var numero = 1;
+      console.log(numero);
+
+      //arise an error because const can't change its value
+      result = 5;
+    
+
+
+
+
     </script>
 
   </body>
