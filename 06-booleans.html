@@ -12,6 +12,71 @@
   <body>
 
     <script>
+
+      console.log(3 > 3);
+      console.log(typeof false);
+      console.log(typeof 'false');
+
+      console.log(5 == '5'); //true (not recommended)
+      console.log(5 === '5'); //false (=== Most Use in javascript)
+
+      if (17 >= 16) {
+        console.log('You can drive');
+      } else if (17 >= 14) {
+        console.log('Almost There!');
+      } else {
+        console.log('You can not drive')
+      }
+
+      const randomNumber = Math.random();
+      console.log(randomNumber >= (1 / 3) && randomNumber < (2 / 3) );
+
+      console.log(randomNumber);
+
+      console.log(false|| false);
+
+
+      //Truthy and Falsy Value
+      let variable1 = !0;
+      console.log(variable1);
+
+      let variable2 = 5;
+      if(variable2) {
+        console.log('truthy')
+      } else {
+        console.log('falsy');
+      }
+
+      if(!variable2) {
+        console.log('truthy')
+      } else {
+        console.log('falsy');
+      }
+
+      console.log('text' - 5);
+
+      let variable3;
+      console.log(variable3);
+
+      const variable4 = undefined;
+      console.log(variable4);
+
+      //Shortcuts for if-statements
+      //Ternary operator
+      const result = true ? 'truthy' : 'falsy';
+      console.log(result);
+      const result2 = !true ? 'truthy' : 'falsy';
+      console.log(result2);
+
+      //Guard operator
+      const falsyValue = false && 'hello';
+      console.log(falsyValue);
+      const truthyValue = true && 'hello';
+      console.log(truthyValue);
+
+      //default operator
+      
+
     </script>
   </body>
 </html>
