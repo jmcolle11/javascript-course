@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+
+    
+
+  </head>
+  <body>
+    <button onclick="
+      updateCartQuantity();
+    ">Show Quantity</button>
+    
+    <button onclick="
+      updateCartQuantity('add-to-cart');
+    ">Add to Cart</button>
+
+    <button onclick="
+      updateCartQuantity('+2');
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity('+3');
+    ">+3</button>
+
+    <button onclick="
+     updateCartQuantity('+4');
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity('+5');
+    ">+5</button>
+
+    <button onclick="
+      updateCartQuantity('remove-a-cart');
+    ">Remove from cart</button>
+
+    <button onclick="
+      updateCartQuantity('-2');
+    ">-2</button>
+
+    <button onclick="
+      updateCartQuantity('-3');
+    ">-3</button>
+
+    <button onclick="
+      updateCartQuantity('reset-cart');
+    ">Reset Cart</button>
+
+    <script>
+      let cartQuantity = 0;
+
+      function updateCartQuantity(select =''){
+     
+        if (select === 'add-to-cart') {
+          if (cartQuantity + 1 > 10) {
+            alert('The cart is full');
+            return; 
+          } 
+          cartQuantity ++;
+          
+        } else if (select === '+2') {
+          if (cartQuantity +2 > 10) {
+            alert('The cart is full');
+            return; 
+          } 
+          cartQuantity += 2;
+
+        } else if (select === '+3') {
+          if (cartQuantity + 3 > 10) {
+            alert('The cart is full');
+            return; 
+          }
+            cartQuantity += 3;
+       
+        } else if (select === '+4') {
+          if (cartQuantity + 4 > 10) {
+            alert('The cart is full');
+            return; 
+          }
+            cartQuantity += 4;
+       
+        } else if (select === '+5') {
+          if (cartQuantity + 5 > 10) {
+            alert('The cart is full');
+            return; 
+          }
+            cartQuantity += 5;
+        
+        } else if (select === 'remove-a-cart') {
+          if (cartQuantity -1 < 0) {
+            alert('Not enough items in the cart');
+            return; 
+          }
+            cartQuantity --;
+       
+        } else if (select === '-2') {
+          if (cartQuantity - 2 < 0) {
+            alert('Not enough items in the cart');
+            return; 
+          }
+            cartQuantity -= 2;
+        
+        } else if (select === '-3') {
+          if (cartQuantity - 3 < 0) {
+            alert('Not enough items in the cart');
+            return; 
+          } 
+            cartQuantity -= 3;
+        
+        } else if (select === 'reset-cart') {
+          cartQuantity = 0;
+          console.log('Cart was reset.')
+        }
+
+        console.log(`Cart quantity: ${cartQuantity}`);
+      }
+
+    </script>
+
+  </body>
+</html>

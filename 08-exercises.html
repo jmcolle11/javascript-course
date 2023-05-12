@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects Exercises</title>
+  </head>
+  <body>
+  
+    <script>
+      const amazonProduct1 = {
+        name: 'basketball',
+        price: 2095 
+      };
+      
+      //const amazonProduct2 = amazonProduct1;
+      const amazonProduct2 = {
+        name: 'shirt',
+        price: 1075 
+      };
+
+      function comparePrice(product1, product2) {
+        let result;
+
+        if (product1.price > product2.price){
+          return result = product2;
+        } else {
+          return result = product1;
+        }
+      }
+
+      function isSameProduct(product1, product2) {
+        let result;
+
+        if (product1 === product2){
+          return true;
+        } else {
+          return false;
+        }
+      }
+      
+      console.log(amazonProduct1);
+      amazonProduct1.price = 500;
+      console.log(amazonProduct1);
+
+      amazonProduct1['delivery-time'] = '3 days';
+      console.log(amazonProduct1['delivery-time']);
+
+      console.log(comparePrice(amazonProduct1, amazonProduct2));
+      
+      console.log(isSameProduct(amazonProduct1, amazonProduct2));
+
+      const message = 'Good Morning ';
+
+
+      console.log(message);
+      console.log(message.toLowerCase());
+      console.log(message.repeat(2));
+
+
+
+
+    </script>
+  </body>
+</html>

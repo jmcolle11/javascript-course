@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+  </head>
+  <body>
+  
+    <script>
+      //Objects
+      const product = {
+        name: 'socks',
+        price: 1090,
+        rate: {
+          stars: 4.7,
+          count: 87
+        },
+        'delivery-time': '1day',
+        fun: function functionName() {
+          console.log('Function inside object');
+        }
+      };
+      
+      //fetch an object or specific value in an object
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      //change a value of a property in an object
+      product.name = 'cotton socks';
+      console.log(product);
+
+      //add a property-value pair in an object
+      product.newProperty = 'new Value';
+      console.log(product);
+
+      //delete a property-value pair in an object
+      delete product.newProperty;
+      console.log(product);
+
+      //object is another type of value , we can store/save an object in a variable
+      console.log(typeof product);
+
+      //notice that this newProperty outputted undefined, because in line 40 we delete this property-value pair
+      console.log(product.newProperty);
+
+
+      //another way to fetch a object and property-value pair using BRACKET NOTATION ['']
+      //we can access also a object inside an object using multiple DOT NOTATION .
+      console.log(product['delivery-time']);
+      console.log(product['name']);
+      console.log(product.rate)
+      console.log(product.rate.stars)
+      console.log(product.rate.count)
+      console.log(product);
+
+      //function inside object this is how you call i
+      product.fun();
+
+      //Javascript OBJECT convert to JSON
+      //as you can see JSON can't support function inside an object
+      //JSON.stringify(objectName); -> Syntax 
+      //stringify is a function inside of a JSON object this one is called METHOD. JSON.stringify() is the way to convert JavaScript OBJECT to JSON
+      const convertToJson = JSON.stringify(product);
+      console.log(convertToJson);
+
+      //JSON convert to Javascript OBJECT
+      //JSON.parse(objectName); -> Syntax
+      //parse is a function inside of a JSON object this one is called METHOD. JSON.parse() is the way to convert JSON to JavaScript OBJECT
+      console.log(JSON.parse(convertToJson));
+
+      //localStorage built-in Object
+      //save values more permanently even i remove the code in line 76 the hello output will appear
+      //localStorage.removeItem() method will remove that property-value pair then the output is null or undefined.
+      localStorage.setItem('message', 'hello');
+      console.log(localStorage.getItem('message'));
+      console.log(localStorage.removeItem('message'));
+
+
+      //Auto-boxing - javascript automatically wrap a string into a SPECIAL OBJECT like box
+      //string can also have property and methods
+      console.log('hello'.length);          //property
+      console.log('hello'.toLocaleUpperCase());//method
+
+      //Object are Reference
+      //be careful when working on objects
+      const object1 = {
+        message: 'hello',
+      };
+      const object2 = object1;
+      object2.message = 'Good Job!';
+      console.log(object1); 
+      console.log(object2); //Copy by reference
+
+      //We cannot compare objects directly
+      //We compare references not the values inside
+      const object3 = {
+        message: 'Good Job!'
+      };
+
+      console.log(object3 === object1);
+      console.log(object2 === object1);
+
+
+      //Destructuring Objects
+      const object4 = {
+        message: 'Good Job!',
+        price: 80,
+        number: 0
+      };
+
+      //const message = object4.message;  -Shortcut for Destructuring
+      // We can have multiple property to take out of an object.
+      const {message, price, num} = object4 ; 
+      console.log(message)// Good Job!
+      console.log(price); //80
+      console.log(num);   //undefined
+
+      const object5 = {
+        message: message,
+        /*method: function function1() {
+          console.log('method')
+        },  -Shorthand Method */
+        method() {
+          console.log('method')
+        }
+      };
+      object5.method();
+      
+    </script>
+  </body>
+</html>

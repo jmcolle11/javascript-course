@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+
+    
+
+  </head>
+  <body>
+
+    <script>
+      // function syntax
+      function functionName() {
+        console.log('hello');
+        console.log(2+2);
+      }
+      functionName();
+      
+      
+      // Return statement
+      function greet() {
+        const message = 'Hi'
+
+        return message;
+      }
+      console.log(greet());
+
+      // Parameters & Arguments
+      function calculateTax(cost, taxPercent = 0.1) {
+        console.log((cost * taxPercent) / 100);
+      }
+      calculateTax(2000, 0.2);
+      calculateTax(5000);
+
+      // 7b
+      /*
+      function greetings(name) {
+        const message = 'Hi '+ name;
+
+        return message;
+      }
+      console.log(greetings('John Michael'));
+      */
+
+      /* 7c
+      function greetings(name) {
+
+        if(name === undefined) {
+          name = 'there!'
+        }
+        
+        const message = 'Hi '+ name;
+
+        return message;
+      }
+      console.log(greetings());
+      */
+
+      /* 7c Simplified 
+      function greetings(name = 'there!') {
+        const message = 'Hi '+ name;
+
+        return message;
+      }
+      console.log(greetings());
+      */
+
+      /* 7d, 7e
+      function convertToFahrenheit(celsius) {
+        const fahrenheit = (celsius * 9 / 5) +32;
+
+        return fahrenheit;
+      }
+      console.log(convertToFahrenheit(25));
+
+      function convertToCelsius(fahrenheit) {
+        const celsius = (fahrenheit - 32) * 5 / 9;
+
+        return celsius;
+      }
+      console.log(convertToCelsius(86));
+      */
+
+      //7f
+      function convertTemperature(degrees, unit) {
+        let result = '';
+
+        if (unit === 'c' || unit === 'C') {
+          const fahrenheit = (degrees * 9 / 5) + 32;
+          result = `${fahrenheit}F`;
+
+        } else if (unit === 'f' || unit === 'F') {
+          const celsius = (degrees - 32) * 5 / 9;
+          result = `${celsius}F`;
+        }
+
+        return console.log(result);
+      }
+      convertTemperature(25, 'C');
+      convertTemperature(86, 'f');
+
+      function functionNull(parameter1 = 'default') {
+        console.log(parameter1);
+      }
+      functionNull();           //default
+      functionNull(undefined);  //default
+      functionNull(null);       //null
+      
+    </script>
+  </body>
+</html>
