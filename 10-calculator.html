@@ -7,15 +7,37 @@
     <title>Calculator</title>
 
     <style>
-      
+      body {
+        background-color: rgb(19, 18, 18);
+        color: white;
+
+      }
+      button {
+        width: 70px;
+        height: 70px;
+        margin: 3px;
+        background-color: rgb(109, 105, 105);
+        color: white;
+        font-weight: 500;
+        font-size: 24px;
+        border: none;
+        border-radius: 50%;
+      }
+      .operator {
+        background-color: orange;
+      }
+      .result {
+        font-family: monospace;
+        font-size: 40px;
+        font-weight: 700;
+        margin-left: 10px;
+      }
     </style>
 
   </head>
   <body>
-
-    <h3>Calculator</h3>
-    <h2 class="js-calculate-output"></h2>
     <div class="first-row">
+      <h2 class="result js-calculate-output"></h2>
       <button onclick="
         updateCalculation('1')
       ">1</button>
@@ -28,7 +50,7 @@
         updateCalculation('3')
       ">3</button>
 
-      <button onclick="
+      <button class="operator" onclick="
         updateCalculation(' + ')
       ">+</button>
     </div>
@@ -46,7 +68,7 @@
         updateCalculation('6')
       ">6</button>
 
-      <button onclick="
+      <button class="operator" onclick="
         updateCalculation(' - ')
       ">-</button>
     </div>
@@ -64,7 +86,7 @@
         updateCalculation('9')
       ">9</button>
 
-      <button onclick="
+      <button class="operator" onclick="
         updateCalculation(' * ')
       ">*</button>
     </div>
@@ -79,20 +101,20 @@
       ">.</button>
 
       <button onclick="
-        calculation = eval(calculation) || '';
-        console.log(calculation);
+        calculation = eval(calculation) || 0;
+        displayCalculation()
+        calculation = localStorage.removeItem('calculation')||'';
 
-        localStorage.setItem('calculation', calculation);
       ">=</button>
 
-      <button onclick="
+      <button class="operator" onclick="
         updateCalculation(' / ')
       ">/</button>
     </div>
 
     <button onclick="
         calculation = localStorage.removeItem('calculation')|| '';
-        console.log(calculation)
+        displayCalculation()
         ">Clear</button>
     
     <script>
@@ -103,10 +125,13 @@
 
           localStorage.setItem('calculation', calculation);
 
-          console.log(calculation);
-          
-        }
-        
+          displayCalculation()
+      }
+
+      function displayCalculation() {
+        document.querySelector('.js-calculate-output')
+            .innerHTML = calculation;
+      }
     </script>
 
     

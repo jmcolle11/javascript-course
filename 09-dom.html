@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+  <style>
+    .addClassList {
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <button class="js-button1" onclick="
+    changeButton('.js-button1');
+  ">hello</button>
+  <button  class="js-button2" onclick="
+    changeButton('.js-button2');
+  ">Second button</button>
+
+  <script>
+    document.title = 'changed'; //change the title of the webpage to change the
+    //document.body.innerHTML = 'hello'; // change the html body of the webpage to hello
+    console.log(document.body);
+      
+    document.querySelector('button').innerHTML = 'changed'; //change the content of the button to change
+    document.querySelector('.js-button2').innerHTML = 'changed the second button'; //change the content of the class js-button to change the second button
+
+    console.log(document.querySelector('button')); //display in the console of the element button
+    console.log(document.querySelector('.js-button2').innerHTML); //display in the console of the class js-button value
+
+    const buttonElement = document.querySelector('.js-button2')
+      .innerHTML = 'document object in the variable';
+    const buttonElement2 = document.querySelector('.js-button2');
+
+    console.log(buttonElement); //display variable buttonElement in the console
+    console.log(buttonElement2); //display variable buttonElement in the console
+
+
+
+
+    //this function toggle only 1 button at a time
+    //to toggle all the button, remove the isTrue().
+    function changeButton(selector) {
+      const getButtonElement = document.querySelector(selector);
+      
+      if (!getButtonElement.classList.contains('addClassList')){   
+        isTrue();
+        getButtonElement.classList.add('addClassList');
+      
+      } else {
+        getButtonElement.classList.remove('addClassList');
+      }
+
+      function isTrue() {
+        const previousSelector = document.querySelector('.addClassList');
+        
+        if (previousSelector) {
+          previousSelector.classList.remove('addClassList');
+          
+        }
+        
+      }
+      
+    }
+    
+
+
+  </script>
+</body>
+</html>

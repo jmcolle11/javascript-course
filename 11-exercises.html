@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays & Loops Exercises</title>
+  <style>
+    body {
+      background-color: rgb(119, 117, 117);
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+
+  <script>
+/*
+    const number = [10, 20, 30];
+    number [0] = 99;
+    console.log(number);
+
+    const listValue = [1, 2, 3, 4, 5];
+    const listValue2 = ['hi', 'hello', 'good'];
+
+
+    function getLastValue(listValue) {
+      const lastIndex = listValue.length - 1;
+      return listValue[lastIndex];
+    }
+    console.log(getLastValue(listValue));
+    console.log(getLastValue(listValue2));
+
+
+    function arraySwap(listValue) {
+      const lastIndex = listValue.length -1;
+      
+      const firstValue = listValue[0];
+      const lastValue = listValue[lastIndex];
+
+      listValue[0] = lastValue;
+      listValue[lastIndex] = firstValue;
+      
+      return listValue;
+    }
+    console.log(arraySwap(listValue));
+    console.log(arraySwap(listValue2));
+
+    
+    
+    for (let i = 0; i <= 10; i++) {
+      console.log(i);
+    }
+
+    for (let i = 5; i >= 0; i--) {
+      console.log(i);
+    }
+    
+    let i = 0;
+    while (i <= 10) {
+      console.log(i);
+      i++;
+    }
+    let i2 = 5;
+    while (i2 >= 0) {
+      console.log(i2);
+      i2--;
+    }
+*/
+
+/*
+    const arrayNumbers = [1, 2, 3];
+    const arrayNumbers2 = [-2, -1, 0, 99];
+    const storeNumber = [];
+
+    for (let i = 0; i < arrayNumbers.length; i++) {
+      let getValue = arrayNumbers[i];
+      getValue += 1;
+      storeNumber.push(getValue);
+    }
+    console.log(storeNumber);
+
+
+    function addOne(array) {
+      const storeNumber = [];
+
+      for (let i = 0; i < array.length; i++) {
+        let getValue = array[i];
+        getValue += 1;
+        storeNumber.push(getValue);
+      }
+      return storeNumber;
+    }
+
+    console.log(addOne(arrayNumbers));
+    console.log(addOne(arrayNumbers2));
+*/
+/*
+    const arrayNumber = [1, 1, 2];
+    const arrayNumber2 = [1, 2, 3];
+
+    function addNum(array, num) {
+      const storeNumber = [];
+
+      for (let i = 0; i < array.length; i++) {
+        let getValue = array[i];
+        getValue += num;
+        storeNumber.push(getValue);
+      }
+      return storeNumber;
+    }
+
+    console.log(addNum(arrayNumber, 2));
+    console.log(addNum(arrayNumber2, 2));
+*/
+/*
+    const arrayNumber = [1, -3, 5]
+    const arrayNumber2 = [-2, 3, -5, 7, 10]
+
+    function countPositive(nums) {
+      const storeNumber = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        let getValue = nums[i];
+
+        if(getValue > 0) {
+          storeNumber.push(getValue);
+        }
+      }
+      return storeNumber.length;
+    }
+    console.log(countPositive(arrayNumber));
+    console.log(countPositive(arrayNumber2));
+*/
+/*
+    const arrayNumbers = [1, -3, 5];
+    const arrayNumbers2 = [-2, 3, -5, 7, 10];
+
+    function minMax(numbers) {
+
+      const minMaxValue = {
+        min: 0,
+        max: 0
+      };
+
+      for (let i = 0; i <numbers.length; i++) {
+        
+        if (minMaxValue.min > numbers[i]) {
+          minMaxValue.min = numbers[i];
+        } else if (minMaxValue.max < numbers[i]){
+          minMaxValue.max = numbers[i];
+        }
+      }
+      return minMaxValue;
+    }
+    console.log(minMax(arrayNumbers));
+    console.log(minMax(arrayNumbers2));
+*/
+/*
+    const arrayNumbers = [];
+        const arrayNumbers2 = [3];
+
+        function minMax(numbers = [null]) {
+
+          const minMaxValue = {
+            min: numbers[0],
+            max: numbers[0]
+          };
+
+          for (let i = 0; i <numbers.length; i++) {
+            
+            if (minMaxValue.min > numbers[i]) {
+              minMaxValue.min = numbers[i];
+            } else if (minMaxValue.max < numbers[i]){
+              minMaxValue.max = numbers[i];
+            }
+          }
+          return minMaxValue;
+        }
+        console.log(minMax());
+        console.log(minMax(arrayNumbers2));
+*/
+/*
+        const arrayWords = ['apple', 'grape', 'apple', 'apple', 'orange'];
+
+        function countWords(words) {
+          const result = {};
+
+          
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+
+          if (!result[word]) {
+            result[word] = 1;
+          } else {
+            result[word]++;
+          }
+          }
+          return result;
+        }
+        console.log(countWords(arrayWords));
+*/
+/*
+        const array1 = ['hello', 'world', 'search', 'good'];
+
+        let  index = -1;
+
+        for (let i = 0; i < array1.length; i++) {
+          if(array1[i] === 'search') {
+            index = i;
+          }
+        }
+        console.log(index);
+
+        const array2 = ['not', 'found'];
+        index = -1;
+
+        for (let i = 0; i < array2.length; i++) {
+          if(array2[i] === 'search') {
+            index = i;
+          } else {
+            console.log(index);
+          }
+        }
+*/
+/*
+    const array1 = ['hello', 'world', 'search', 'good','search'];
+
+      let  index = -1;
+
+      for (let i = 0; i < array1.length; i++) {
+        if(array1[i] === 'search') {
+          index = i;
+          break;
+        }
+      }
+      console.log(index);
+
+      const array2 = ['not', 'found'];
+      index = -1;
+
+      for (let i = 0; i < array2.length; i++) {
+        if(array2[i] === 'search') {
+          index = i;
+        } else {
+          console.log(index);
+        }
+    }
+*/
+/*
+    function findIndex(array, word) {
+      let index = -1;
+
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          return index = 1;
+        } else {
+          index = -1;
+        }
+      }
+
+      return index;
+    }
+    
+    console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+    console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+*/
+/*
+    function removeEgg(foods) {
+      const result = [];
+
+      for (let i = 0; i < foods.length; i++) {
+
+        if (foods[i] === 'egg') {
+          continue;
+        } else {
+          result.push(foods[i]);
+        }
+        
+      }
+
+      return result;
+    }
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+*/
+/*
+    function removeEgg(foods) {
+      const result = [];
+      let eggCounter = 0;
+
+      for (let i = 0; i < foods.length; i++) {
+
+        if (foods[i] === 'egg' && eggCounter < 2){
+          eggCounter++;
+          continue;
+        }
+        result.push(foods[i]);
+      }
+        return result;
+    }
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+*/
+/*
+    function removeEgg(foods) {
+      const result = [];
+      let eggCounter = 0;
+      foods.reverse();
+      for (let i = 0; i < foods.length; i++) {
+
+        if (foods[i] === 'egg' && eggCounter < 2){
+          eggCounter++;
+          continue;
+        }
+        result.push(foods[i]);
+      }
+        return result.reverse();
+    }
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+*/
+/*
+    const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+
+    function removeEgg(foods) {
+      const copyOfFoods = foods.slice();
+      copyOfFoods.reverse();
+      const result = [];
+      let eggCounter = 0;
+      
+      for (let i = 0; i < copyOfFoods.length; i++) {
+
+        if (copyOfFoods[i] === 'egg' && eggCounter < 2){
+          eggCounter++;
+          continue;
+        }
+        result.push(copyOfFoods[i]);
+      }
+        return result.reverse();
+    }
+    console.log(removeEgg(foods));
+    console.log(foods);
+*/
+/*
+    for (let i = 1; i <= 20; i++) {
+      if (i % 3 === 0 && i % 5 === 0 ) {
+        console.log('FizzBuzz');
+      
+      } else if (i % 3 === 0) {
+        console.log('Fizz')
+      
+      } else if (i % 5 === 0) {
+        console.log('Buzz');
+      } else {
+        console.log(i);
+      }
+    }
+*/
+    function findIndex(array, word) {
+      
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] === word) {
+          return i;
+        }
+      }
+      return -1;
+    }
+
+    function unique(array) {
+      const result = [];
+
+      for (let i = 0; i < array.length; i++) {
+        const word = array[i];
+
+        // Using the findIndex() function from above, we
+        // can check if the string is already in the
+        // result array. If it's not in the result array
+        // (index is -1), then add it to the result array.
+        if (findIndex(result, word) === -1) {
+          result.push(word);
+        }
+      }
+
+      return result;
+    }
+
+    console.log(unique(['green', 'red', 'blue', 'red']));
+  </script>
+</body>
+</html>

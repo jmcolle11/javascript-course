@@ -1,0 +1,38 @@
+body {
+  font-family: Roboto mono;
+}
+.subscribe-btn {
+  background-color: rgb(226, 40, 40);
+  color: white;
+  font-weight: 700;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+
+}
+/* .is-subscribed will override the previous style*/
+.is-subscribed {
+  background-color: rgb(240, 240, 240);
+  color: rgb(226, 40, 40);
+
+}
+.cost-input {
+  font-size: 16px;
+  padding: 10px;
+
+}
+.calculate-btn {
+  background-color: green;
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 12px 15px;
+  border: none;
+  cursor: pointer;
+
+}
+.js-total-result-error {
+  color: red;
+}

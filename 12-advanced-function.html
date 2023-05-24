@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+
+  <style>
+    body {
+      background-color: rgb(83, 83, 83);
+    }
+  </style>
+
+
+</head>
+<body>
+  
+
+  <script>
+    //shortcut function
+    //Advantage of this:
+    //1. Easier to read
+    //2. Hoisting - we don't have to worry about what order we write the code
+    greeting(); // E.g. of Hoisting is this we can call a function even before we write the function 
+    function greeting() {
+      console.log('hello');
+    }
+    
+    //we can save a function into a variable
+    //This called Anonymous function
+    //because we don't need to name it, we just call it using the variables name
+    const num = 2;
+    const function1 = function() {
+      console.log('hello2');
+    };
+    console.log(function1);
+    console.log(typeof function1);
+    function1();
+
+    //we can also save a function inside an object
+    //we can also use an anonymous function inside an object
+    //Function inside object is called Method
+    const object1 = {
+      num: 2,
+      fun: function() {
+        console.log('hello3');
+      }
+    }
+    object1.fun();
+
+    //passing a value in a function
+    //using parameter & arguments
+    function passingValue(param) {
+      console.log(param);
+    }
+    passingValue('hello4');
+
+    //passing a function into another function
+    //This one is called Callback Function
+    function run(param) {
+      param();
+    }
+    run(function() {
+      console.log('hello5');
+    });
+
+    //setTimeout() - it will run the timer and after 3000 milliseconds it runs the function
+    setTimeout(function() {
+      console.log('timeout');
+      console.log('timeout2');
+    }, 3000);
+    console.log('next line'); // async code - it will not wait the setTimeout to run, instead this is the first to run. this is called asynchronous code you can do anything while you wait for the others to run.
+
+    //setInterval() - it will run the time and after 5000 milliseconds it always runs the function with a interval of 5000 milliseconds 
+    setInterval(function() {
+      console.log('interval');
+    }, 5000);
+    console.log('next line 2');
+
+    //forEach() is more preferred for looping through an array
+    //it can have value parameter or index parameter or both
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function (value, index){
+      console.log(index);
+      console.log(value);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 Exercises</title>
+  <style>
+    body {
+      background-color: rgb(107, 95, 107);
+    }
+  </style>
+</head>
+<body>
+  <button class="js-toggle-finish-btn" onclick="
+    toggleStart();;
+  ">Start</button>
+
+  <button class="js-toggle-loading-btn" onclick="
+    loading();
+  ">Start</button>
+
+  <button class="js-add-to-cart-btn" onclick="
+    displayAdded();
+  ">Add to cart</button>
+  <p class="js-display-added"></p>
+
+  <button onclick="
+    addSubtractNotification('add');
+    displayNotification();
+  ">Add</button>
+
+  <button onclick="
+    addSubtractNotification('subtract');
+    displayNotification();
+  ">Remove</button>
+
+  <script>
+    
+    const add = function() {
+      for(let i = 1; i <=2; i++) {
+        console.log(2 + 3);
+      }  
+    }
+    add();
+
+    function runTwice(fun) {
+      for(let i = 1; i <=2; i++) {
+        fun();
+      }  
+    }
+
+    runTwice(function() {
+      console.log('12b');
+    });
+
+    runTwice(add);
+    
+    function toggleStart() {
+      if (document.querySelector('.js-toggle-finish-btn').innerHTML !== 'Finished!') {
+        setTimeout(function() {
+          document.querySelector('.js-toggle-finish-btn').innerHTML = 'Finished!';
+        }, 1000);
+
+      }else {
+        setTimeout(function() {
+          document.querySelector('.js-toggle-finish-btn').innerHTML = 'Start';
+        }, 1000);
+
+      }
+    }
+
+    
+    function loading() {
+      if (document.querySelector('.js-toggle-loading-btn').innerHTML !== 'Finished!') {
+        setTimeout(function() {
+          document.querySelector('.js-toggle-loading-btn').innerHTML = 'Finished!';
+        }, 1000);
+        document.querySelector('.js-toggle-loading-btn').innerHTML = 'loading...';
+     
+      }else {
+        setTimeout(function() {
+          document.querySelector('.js-toggle-loading-btn').innerHTML = 'Start';
+        }, 1000);
+      }
+    }
+
+ 
+    let timeoutId;
+    function displayAdded() {
+      document.querySelector('.js-display-added').innerHTML = 'Added';
+      clearTimeout(timeoutId);
+
+      timeoutId = setTimeout(function() {
+        document.querySelector('.js-display-added').innerHTML = '';
+      }, 2000);
+      console.log(timeoutId);
+   }
+
+/*  
+    setInterval(function() {
+
+      if (document.title === '12 Exercises'){
+        document.title = '(2) New Messages';
+      } else {
+        document.title = '12 Exercises';
+      }
+       
+    }, 1000);
+*/
+
+
+let messages = JSON.parse(localStorage.getItem('messages'));
+let intervalId;
+
+displayNotification()
+
+    function displayNotification() {
+      clearInterval(intervalId);
+      intervalId = setInterval(function() {
+
+        if (document.title === `(${messages}) New Messages`){
+          document.title = '12 Exercises';
+        } else if (messages > 0){
+          document.title = `(${messages}) New Messages`;
+        } else if (messages === 0) {
+          stopNotification(intervalId);
+        }
+      }, 1000);
+
+      localStorage.setItem('messages', JSON.stringify(messages));
+    }
+
+    function stopNotification(intervalId) {
+      clearInterval(intervalId);
+      document.title = '12 Exercises';
+    }
+
+    function addSubtractNotification(operator) {
+      if (operator === 'add') {
+        messages++;
+      } else {
+        if (messages <= 0) {
+          alert('Notifications clear')
+        } else {
+          messages--;
+        }
+      }
+    }
+    
+    
+   
+
+
+
+
+    
+  </script>
+</body>
+</html>

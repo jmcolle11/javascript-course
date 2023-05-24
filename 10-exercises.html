@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Exercises</title>
+
+  <style>
+    .add-to-cart-btn {
+      background-color: rgb(255, 216, 20);
+      padding: 5px 10px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+
+    }
+    .request-btn {
+      background-color: black;
+      color: white;
+      font-weight: 700;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+    }
+    .schedule-btn {
+      background-color: rgb(230, 230, 230);
+      font-weight: 700;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+    }
+    .gaming-btn {
+      background-color: rgb(230, 230, 230);
+      color: black;
+      font-weight: 500;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .is-toggled {
+      background-color: black;
+      color: white;
+      
+    }
+  </style>
+
+</head>
+<body>
+  <button class="add-to-cart-btn"> Add to Cart</button>
+
+  <button class="request-btn">Request now</button>
+  <button class="schedule-btn">Schedule for later</button>
+
+  <button class="js-btn">Test</button>
+
+  <div>
+    <button class="gaming-btn js-gaming" onclick="
+      gamingBtn('.js-gaming');
+    ">Gaming</button>
+
+    <button class="gaming-btn js-gaming2" onclick="
+      gamingBtn('.js-gaming2');
+    ">Music</button>
+
+    <button class="gaming-btn js-gaming3" onclick="
+      gamingBtn('.js-gaming3');
+    ">Tech</button>
+  </div>
+ 
+
+  <script>
+  
+    /*You can turn on a button as many as you want
+    function gamingBtn(selector) {
+      
+      const elementBtn = document.querySelector(selector);
+  
+          if (!elementBtn.classList.contains('is-toggled')) {
+            elementBtn.classList.add('is-toggled');
+
+          } else if (elementBtn.classList.contains('is-toggled')) {
+            elementBtn.classList.remove('is-toggled');
+          }
+
+
+
+          console.log(elementBtn.classList.contains('is-toggled'));
+          console.log(typeof elementBtn);
+          console.log(elementBtn);
+    }
+    */
+    //turn on only 1 button
+    function gamingBtn(selector) {
+      
+      const elementBtn = document.querySelector(selector);
+  
+          if (!elementBtn.classList.contains('is-toggled')) {
+            
+            //before we turn on this button, first it will check if there's any button is turn on call checkPreviousSelector() function to turn off all possible button.
+            checkPreviousSelector()
+            elementBtn.classList.add('is-toggled');
+
+          } else {
+            elementBtn.classList.remove('is-toggled');
+          }
+
+          function checkPreviousSelector() {
+            const previousBtn = document.querySelector('.is-toggled');
+              if (previousBtn) {
+                previousBtn.classList.remove('is-toggled');
+          }
+
+    }
+  }
+
+  </script>
+</body>
+</html>

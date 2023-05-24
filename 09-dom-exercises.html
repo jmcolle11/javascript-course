@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+</head>
+<body>
+  <div>
+    <button class="js-change">9a</button>
+  </div>
+
+  <div>
+    <button class="" onclick="
+      chooseSide('heads');
+    ">heads</button>
+    <button class="" onclick="
+      chooseSide('tails');
+    ">tails</button>
+  
+    <p class="js-display-text"></p>
+  </div>
+
+  <div>
+    <input type="textbox" name="" id="" class="js-input-name" placeholder="Enter your name" onkeydown="
+      handleInputName(event); 
+      displayName();
+    ">
+    <button class="" onclick="
+    displayName();
+    ">Submit</button>
+    <p class="js-display-name"></p>
+  </div>
+
+  <div>
+    <input type="textbox" name="" id="" class="js-input-text" placeholder="Enter your name" onkeyup="
+      handleInputText(); 
+    ">
+    <p class="js-show-text"></p>
+  </div>
+
+  <script>
+    console.log(document.querySelector('button'));
+    console.log(document.querySelector('.js-change').innerHTML = '9b done!');
+
+    function chooseSide(value){
+      if (value === 'heads') {
+        document.querySelector('.js-display-text').innerHTML = 'You Chose: heads';
+      } else if (value === 'tails') {
+        document.querySelector('.js-display-text').innerHTML = 'You Chose: tails';
+      }
+    }
+
+    function handleInputName (event) {
+      if (event.key === 'Enter') {
+        displayName();
+      }
+    }
+    function displayName () {
+      const inputNameElement = document.querySelector('.js-input-name');
+
+      document.querySelector('.js-display-name')
+        .innerHTML = inputNameElement.value;
+    }
+
+    function handleInputText () {
+
+      const inputText = document.querySelector('.js-input-text').value;
+
+      document.querySelector('.js-show-text')
+        .innerHTML = inputText;
+    }
+
+    
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Roboto mono;
+
+}
+.icon-btn {
+  background-color: transparent;
+  height: 120px;
+  width: 120px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white; 
+  border-radius: 60%;
+  margin-right: 10px;
+  cursor: pointer;
+
+}
+.move-icon {
+  height: 50px;
+  width: 50px;
+
+}
+
+.result {
+  margin-top: 50px;
+
+}
+.score {
+  margin-top: 60px;
+
+}
+.reset-btn,
+.auto-play-btn {
+  background-color: white;
+  font-size: 15px;
+  padding: 8px 15px;
+  border: none;
+  cursor: pointer;
+
+}
